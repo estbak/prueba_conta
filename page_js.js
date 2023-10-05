@@ -10,7 +10,7 @@ $(document).ready(function() {
             data: { mensaje: mensaje }, // Datos que se enviarán al servidor
             success: function(respuesta) {
                 // Función que se ejecuta cuando la solicitud es exitosa
-                alert("Respuesta del servidor: " + respuesta);
+                alert(respuesta);
             },
             error: function() {
                 alert("Hubo un error al hacer la solicitud.");
