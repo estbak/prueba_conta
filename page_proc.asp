@@ -34,6 +34,3 @@
              Response.Write ""
         End If
     %>
-
-
-    
