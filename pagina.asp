@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto Prueba Contaline</title>
+    <title>Proyecto Entrenamiento Contaline</title>
 
-    <!-- <script src="js/lib/jquery-2.1.4.min.js"></script> -->
     <!-- CSS de Bootstrap (Estable) -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
@@ -15,9 +14,9 @@
         <h1 class="mb-4">Formulario Contaline</h1>
         
         <form>
-            <!-- Select con Bootstrap -->
+   
             <div class="mb-3">
-                <label for="miSelect" class="form-label">Tipo de Solicitud:</label>
+                <label for="miSelect" >Tipo de Solicitud:</label>
                 <select class="form-select" id="miSelect" name="miSelect">
                     <option value="default" disabled selected>&#10048; Seleccione una opción &#10048;</option>
                     <option value="reclamo">Reclamo</option>
@@ -25,20 +24,19 @@
                     <option value="agradecimiento">Agradecimiento</option>
                 </select>
             </div>
-            
-            <!-- Input Text con Bootstrap -->
+   
             <div class="mb-3">
                 <label for="nombre" class="form-label">Nombre:</label>
                 <input type="text" class="form-control" id="nombre" name="nombre">
             </div>
             
-            <!-- Checkbox con Bootstrap -->
+
             <div class="mb-3 form-check">
                 <input type="checkbox" class="form-check-input" id="miCheckbox" name="miCheckbox">
                 <label class="form-check-label" for="miCheckbox">Soy cliente Contaline</label>
             </div>
             
-            <!-- Radio Buttons con Bootstrap -->
+
             <div class="mb-3">
                 <label class="form-label">Seleccione un área:</label>
                 <div class="form-check">
@@ -55,13 +53,11 @@
                 </div>
             </div>
             
-            <!-- Textarea con Bootstrap -->
             <div class="mb-3">
                 <label for="miTextarea" class="form-label">Comentarios:</label>
                 <textarea class="form-control" id="miTextarea" name="miTextarea" rows="4" cols="50"></textarea>
             </div>
             
-            <!-- Botones con Bootstrap -->
             <div class="mb-3">
                 <button class="btn btn-success" id="enviar" type="button">Enviar</button>
                 <button class="btn btn-warning" id="ayuda" type="button">Ayuda</button>
