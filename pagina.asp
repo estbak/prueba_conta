@@ -19,9 +19,6 @@
                 <label for="miSelect" >Tipo de Solicitud:</label>
                 <select class="form-select" id="miSelect" name="miSelect">
                     <option value="default" disabled selected>&#10048; Seleccione una opción &#10048;</option>
-                    <option value="reclamo">Reclamo</option>
-                    <option value="sugerencia">Sugerencia</option>
-                    <option value="agradecimiento">Agradecimiento</option>
                 </select>
             </div>
    
