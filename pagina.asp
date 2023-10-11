@@ -16,9 +16,10 @@
    
             <div class="mb-3">
                 <label for="miSelect" >Tipo de Solicitud:</label>
-                <select class="form-select" id="miSelect" name="miSelect">
+                <select class="form-select mr-1" id="miSelect" name="miSelect">
                     <option value="default" disabled selected>&#10048; Seleccione una opción &#10048;</option>
                 </select>
+                <button class="btn btn-warning " id="ayuda" type="button">Ayuda</button>
             </div>
    
             <div class="mb-3">
@@ -55,9 +56,9 @@
             </div>
             
             <div class="mb-3">
-                <button class="btn btn-success" id="enviar" type="button">Enviar</button>
-                <button class="btn btn-warning" id="ayuda" type="button">Ayuda</button>
-                <button class="btn btn-danger" id="resetear" type="button">Resetear</button>
+                <button class="btn btn-success mr-1" id="enviar" type="button">Enviar</button>
+                
+                <button class="btn btn-danger " id="resetear" type="button">Resetear</button>
             </div>
         </form>
     </div>

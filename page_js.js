@@ -65,6 +65,19 @@ $(document).ready(function() {
             
             // Reemplazar el contenido del div existente con el nuevo
             $("#tablaContainer").replaceWith(tablaDiv);
+
+            // Agregar 7 filas
+            $.ajax({
+                type: "POST",
+                url: "page_proc.asp", 
+                data: { accion: "obtenerFilas" }, 
+                success: function(filas) {
+                    $("#tablaContainer tbody").append(filas); 
+                },
+                error: function() {
+                    alert("Hubo un error al obtener las filas.");
+                }
+            }); 
         },
         error: function() {
             alert("Hubo un error al obtener la hora al cargar la página.");
