@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    alert("¡Bienvenido a Contaline!");
+    alert("¡Bienvenid@ a Contaline!");
     var opcionesCargadas = false;
 
     $("#ayuda").click(function() {
@@ -40,30 +40,29 @@ $(document).ready(function() {
         success: function(hora) {
             alert("Hora del servidor al cargar la página: " + hora);
             
-            // Crear un nuevo div para la tabla
             var tablaDiv = $("<div>");
-            tablaDiv.attr("id", "tablaContainer"); // Asignar un ID al div
+            tablaDiv.attr("id", "tablaContainer");
             
-            // Crear la tabla HTML con clases de Bootstrap
             var tablaHTML = "<table class='table table-bordered'>";
             tablaHTML += "<thead class='thead-dark'><tr><th>Columna 1</th><th>Columna 2</th><th>Columna 3</th><th>Columna 4</th><th>Columna 5</th><th>Columna 6</th><th>Columna 7</th></tr></thead>";
             tablaHTML += "<tbody>";
             
-            // Agregar filas
             for (var i = 1; i <= 3; i++) {
                 tablaHTML += "<tr>";
                 for (var j = 1; j <= 7; j++) {
-                    tablaHTML += "<td>Fila " + i + ", Columna " + j + "</td>";
+                    if (j === 1) {
+                        tablaHTML += "<td>" + i + "</td>";
+                    } else {
+                        tablaHTML += "<td></td>";
+                    }
                 }
                 tablaHTML += "</tr>";
             }
             
             tablaHTML += "</tbody></table>";
 
-            // Agregar la tabla al div
             tablaDiv.html(tablaHTML);
             
-            // Reemplazar el contenido del div existente con el nuevo
             $("#tablaContainer").replaceWith(tablaDiv);
 
             // Agregar 7 filas
@@ -72,17 +71,27 @@ $(document).ready(function() {
                 url: "page_proc.asp", 
                 data: { accion: "obtenerFilas" }, 
                 success: function(filas) {
-                    $("#tablaContainer tbody").append(filas); 
+                   
+                    $("#tablaContainer tbody").append(filas);
+
+                    $("#tablaContainer tbody tr").each(function() {
+                        $(this).find("td:eq(6)").html("<button class='btn btn-warning btn-show-row'>Mostrar Fila</button>");
+                    });
+
+                    $(".btn-show-row").click(function() {
+                        var numeroFila = $(this).closest("tr").find("td:first").text();
+                        alert("Número de Fila: " + numeroFila);
+                    });
                 },
                 error: function() {
                     alert("Hubo un error al obtener las filas.");
                 }
-            }); 
+            });
         },
         error: function() {
             alert("Hubo un error al obtener la hora al cargar la página.");
         }
     });
-
 });
+
 

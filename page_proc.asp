@@ -24,13 +24,17 @@ ElseIf accion = "obtenerOpciones" Then
 ElseIf accion = "obtenerFilas" Then
     Dim filas
     Dim contador
-    contador = 1
-    While contador <= 7 ' Generar 7 filas
+    contador = 4
+    While contador <= 10 ' Generar 7 filas
         filas = filas & "<tr>"
         Dim j
         j = 1
         While j <= 7 ' Generar 7 columnas en cada fila
-            filas = filas & "<td>Fila Nueva " & contador & ", Columna " & j & "</td>"
+            If j = 1 Then
+                filas = filas & "<td>" & contador & "</td>" ' Mostrar el número de fila en la primera columna
+            Else
+                filas = filas & "<td></td>" ' Las otras columnas están vacías
+            End If
             j = j + 1
         Wend
         filas = filas & "</tr>"
